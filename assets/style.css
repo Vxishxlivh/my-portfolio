@@ -4,17 +4,17 @@
    ============================================================ */
 
 :root {
-  --sky:      #1b1035;   /* page background */
-  --sky-2:    #2a1857;
-  --ink:      #0d0820;   /* outlines */
-  --paper:    #fff4dc;   /* card surface */
-  --paper-2:  #f3e3bf;
-  --text:     #fff4dc;
-  --muted:    #b9a8e0;
-  --pink:     #ff5fa2;
-  --yellow:   #ffd23f;
-  --green:    #3ddc84;
-  --cyan:     #4cc9f0;
+  --sky:      #5e0b3c;   /* page background */
+  --sky-2:    #b3165f;
+  --ink:      #1f0414;   /* outlines */
+  --paper:    #fff7fb;   /* card surface */
+  --paper-2:  #fbe0ec;
+  --text:     #fff7fb;
+  --muted:    #ffc4de;
+  --pink:     #ff4f9a;
+  --yellow:   #ffe066;
+  --green:    #9be15d;
+  --cyan:     #5fd6b4;
   --orange:   #ff8c42;
   --px: 4px;                 /* one "pixel" */
   --font-title: "Press Start 2P", monospace;
@@ -34,7 +34,7 @@ body {
   min-height: 100vh;
   background-color: var(--sky);
   background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' shape-rendering='crispEdges'%3E%3Crect x='12' y='20' width='4' height='4' fill='%23fff4dc'/%3E%3Crect x='88' y='8' width='4' height='4' fill='%23ffd23f' opacity='.8'/%3E%3Crect x='132' y='64' width='4' height='4' fill='%23fff4dc' opacity='.6'/%3E%3Crect x='48' y='96' width='4' height='4' fill='%234cc9f0' opacity='.7'/%3E%3Crect x='112' y='132' width='4' height='4' fill='%23fff4dc' opacity='.5'/%3E%3Crect x='24' y='140' width='4' height='4' fill='%23ff5fa2' opacity='.6'/%3E%3Crect x='68' y='52' width='4' height='4' fill='%23fff4dc' opacity='.35'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' shape-rendering='crispEdges'%3E%3Crect x='12' y='20' width='4' height='4' fill='%231f0414' opacity='.55'/%3E%3Crect x='88' y='8' width='4' height='4' fill='%23fff7fb' opacity='.7'/%3E%3Crect x='132' y='64' width='4' height='4' fill='%231f0414' opacity='.5'/%3E%3Crect x='48' y='96' width='4' height='4' fill='%23fff7fb' opacity='.45'/%3E%3Crect x='112' y='132' width='4' height='4' fill='%231f0414' opacity='.45'/%3E%3Crect x='24' y='140' width='4' height='4' fill='%239be15d' opacity='.6'/%3E%3Crect x='68' y='52' width='4' height='4' fill='%231f0414' opacity='.35'/%3E%3C/svg%3E"),
     linear-gradient(180deg, var(--sky) 0%, var(--sky-2) 100%);
   background-attachment: fixed;
   color: var(--text);
@@ -59,7 +59,7 @@ img { display: block; max-width: 100%; }
     0 var(--px) 0 0 var(--ink),
     calc(var(--px) * -1) 0 0 0 var(--ink),
     var(--px) 0 0 0 var(--ink),
-    calc(var(--px) * 2) calc(var(--px) * 2) 0 0 rgba(13, 8, 32, .55);
+    calc(var(--px) * 2) calc(var(--px) * 2) 0 0 rgba(31, 4, 20, .55);
 }
 
 /* ---------- top HUD ---------- */
@@ -67,9 +67,9 @@ img { display: block; max-width: 100%; }
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
   padding: 14px 24px;
-  background: rgba(13, 8, 32, .88);
+  background: rgba(31, 4, 20, .88);
   border-bottom: var(--px) solid var(--ink);
-  box-shadow: 0 var(--px) 0 0 var(--pink);
+  box-shadow: 0 var(--px) 0 0 var(--green);
   backdrop-filter: blur(4px);
 }
 .hud .logo {
@@ -103,14 +103,14 @@ h1 {
   font-family: var(--font-title);
   font-size: clamp(22px, 4.4vw, 44px);
   line-height: 1.35; letter-spacing: 1px;
-  text-shadow: 4px 4px 0 var(--ink), 6px 6px 0 var(--pink);
+  text-shadow: 4px 4px 0 var(--ink), 6px 6px 0 var(--green);
   margin-bottom: 18px;
 }
 h1 .hl { color: var(--yellow); }
 h2 { font-family: var(--font-head); font-weight: 700; font-size: 34px; line-height: 1.1; }
 h3 { font-family: var(--font-head); font-weight: 700; font-size: 26px; line-height: 1.15; }
 .lede { font-size: 26px; color: var(--muted); max-width: 700px; }
-.lede strong { color: var(--text); font-weight: normal; background: linear-gradient(transparent 60%, rgba(255,95,162,.45) 0); }
+.lede strong { color: var(--text); font-weight: normal; background: linear-gradient(transparent 78%, var(--green) 0); }
 
 .blink { animation: blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
@@ -174,17 +174,17 @@ footer.credits {
 .slot .frame .empty {
   position: absolute; inset: 0;
   display: grid; place-items: center; text-align: center;
-  font-family: var(--font-title); font-size: 10px; color: #b29d74; line-height: 1.8;
+  font-family: var(--font-title); font-size: 10px; color: #d9a3bb; line-height: 1.8;
 }
 .slot .frame .empty i {
-  display: block; font-style: normal; font-size: 22px; color: #c9b48a; margin-bottom: 4px;
+  display: block; font-style: normal; font-size: 22px; color: #e8b9cd; margin-bottom: 4px;
 }
 .slot .name {
   display: flex; justify-content: space-between; align-items: center;
   font-family: var(--font-head); font-weight: 600; font-size: 20px;
   padding: 10px 2px 10px;
 }
-.slot .name small { font-family: var(--font-title); font-size: 8px; color: #9a8662; }
+.slot .name small { font-family: var(--font-title); font-size: 8px; color: #b0789a; }
 .slot .badge {
   position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
   font-family: var(--font-title); font-size: 8px;
@@ -202,7 +202,7 @@ footer.credits {
   display: grid; grid-template-columns: 1fr auto; gap: 18px 28px; align-items: center;
 }
 .player-card .stats { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 21px; }
-.player-card .stats b { font-family: var(--font-title); font-size: 9px; color: #8a6fd1; margin-right: 6px; font-weight: normal; }
+.player-card .stats b { font-family: var(--font-title); font-size: 9px; color: #c2185b; margin-right: 6px; font-weight: normal; }
 .player-card p { font-size: 23px; grid-column: 1 / -1; }
 
 .press-start { text-align: center; margin-top: 52px; }
@@ -221,12 +221,12 @@ footer.credits {
 }
 .tree.data .icon { background: var(--cyan); }
 .tree.gtm  .icon { background: var(--pink); }
-.tree header small { display: block; font-family: var(--font-title); font-size: 9px; color: #8a6fd1; margin-bottom: 6px; }
+.tree header small { display: block; font-family: var(--font-title); font-size: 9px; color: #c2185b; margin-bottom: 6px; }
 .tree > p { font-size: 22px; margin-bottom: 22px; }
 
 .bar { margin-bottom: 14px; }
 .bar label { display: flex; justify-content: space-between; font-size: 21px; }
-.bar label span { font-family: var(--font-title); font-size: 9px; align-self: center; color: #8a6fd1; }
+.bar label span { font-family: var(--font-title); font-size: 9px; align-self: center; color: #c2185b; }
 .bar .track {
   height: 18px; margin-top: 4px; background: var(--paper-2);
   box-shadow: 0 0 0 3px var(--ink);
@@ -236,7 +236,7 @@ footer.credits {
 .tree.data .bar .track i.on { background: var(--cyan); }
 .tree.gtm  .bar .track i.on { background: var(--pink); }
 
-.tree ul { list-style: none; margin-top: 24px; border-top: 3px dashed #d8c59c; padding-top: 18px; }
+.tree ul { list-style: none; margin-top: 24px; border-top: 3px dashed #f0c4d6; padding-top: 18px; }
 .tree li { padding-left: 26px; position: relative; margin-bottom: 10px; font-size: 21px; }
 .tree li::before { content: "▶"; position: absolute; left: 0; top: 1px; font-size: 14px; color: var(--orange); }
 
@@ -253,7 +253,7 @@ footer.credits {
 .items { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 16px; }
 .item {
   aspect-ratio: 1 / 1; display: grid; place-items: center; text-align: center;
-  background: rgba(13,8,32,.55); color: var(--text);
+  background: rgba(31,4,20,.55); color: var(--text);
   box-shadow: 0 0 0 3px var(--muted), inset 0 0 0 3px var(--ink);
   font-family: var(--font-head); font-size: 19px; padding: 8px;
   transition: transform .08s steps(2);
@@ -267,7 +267,7 @@ footer.credits {
 .quests { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px; margin-top: 48px; }
 .quest { padding: 26px 26px 24px; display: flex; flex-direction: column; }
 .quest .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; gap: 10px; }
-.quest .qno { font-family: var(--font-title); font-size: 10px; color: #8a6fd1; }
+.quest .qno { font-family: var(--font-title); font-size: 10px; color: #c2185b; }
 .quest .status {
   font-family: var(--font-title); font-size: 8px; padding: 6px 8px; color: var(--ink);
   box-shadow: 0 0 0 2px var(--ink);
@@ -286,7 +286,7 @@ footer.credits {
   padding: 10px 12px; background: var(--ink); color: var(--yellow);
 }
 .quest .links a:hover { background: var(--pink); color: var(--ink); }
-.quest .links em { font-family: var(--font-title); font-size: 9px; font-style: normal; color: #9a8662; padding: 10px 0; }
+.quest .links em { font-family: var(--font-title); font-size: 9px; font-style: normal; color: #b0789a; padding: 10px 0; }
 
 .achievements { margin-top: 72px; }
 .achievements h2 { margin-bottom: 24px; }
@@ -305,11 +305,11 @@ footer.credits {
 .save-grid > * { min-width: 0; }
 .cal-box { padding: 22px; min-height: 560px; }
 .cal-box .title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; gap: 12px; flex-wrap: wrap; }
-.cal-box .title span { font-family: var(--font-title); font-size: 9px; color: #8a6fd1; }
+.cal-box .title span { font-family: var(--font-title); font-size: 9px; color: #c2185b; }
 #my-cal-inline { width: 100%; min-height: 480px; overflow: auto; position: relative; }
 .cal-loading {
   position: absolute; inset: 0; display: grid; place-items: center;
-  font-family: var(--font-title); font-size: 11px; color: #8a6fd1; pointer-events: none;
+  font-family: var(--font-title); font-size: 11px; color: #c2185b; pointer-events: none;
 }
 .cal-fallback { margin-top: 14px; font-size: 19px; }
 
@@ -367,3 +367,11 @@ footer.credits {
 @media (prefers-reduced-motion: reduce) {
   *, ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; transition: none !important; }
 }
+
+/* hover video on character slots */
+.slot .frame video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  z-index: 2; opacity: 0; transition: opacity .15s steps(3);
+}
+.slot.is-playing .frame video { opacity: 1; }
+.slot.is-playing .badge { opacity: 1; }
